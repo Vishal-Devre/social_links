@@ -327,6 +327,57 @@
         .platform-color {
             background: linear-gradient(135deg, var(--platform-color), var(--secondary-color));
         }
+
+        /* Floating Portfolio Button */
+        .portfolio-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            animation: floatBtn 3s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.4);
+        }
+
+        .portfolio-btn i {
+            font-size: 1.2rem;
+        }
+
+        @keyframes floatBtn {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* For mobile devices */
+        @media (max-width: 768px) {
+            .portfolio-btn {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 
@@ -339,6 +390,12 @@
     <button class="theme-toggle" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>
     </button>
+
+    <!-- Floating Portfolio Button -->
+    <a href="https://portfoliovd-five.vercel.app/" target="_blank" class="portfolio-btn">
+        <i class="fas fa-briefcase"></i>
+        My Portfolio
+    </a>
 
     <div class="container">
         <div class="profile">
